@@ -3,7 +3,8 @@ import axios from 'axios'
 export const StoreContext = createContext(null);
 const StoreContextProvider = (props) => {
     const [cartItems, setCartItems] = useState({});
-    const url = "http://localhost:4000";
+    // const url = "http://localhost:4000";
+    const url = "https://tomato-fbackend.vercel.app/";
     const [token, setToken] = useState("");
     const [food_list, setFoodList] = useState([]);
 
@@ -39,6 +40,7 @@ const StoreContextProvider = (props) => {
     const fetchFoodList = async () => {
         const response = await axios.get(url + "/api/food/list")
         setFoodList(response.data.data)
+        
     }
     const loadCartData = async (token) => {
         const response = await axios.post(url + '/api/cart/get', {}, { headers: { token } })
