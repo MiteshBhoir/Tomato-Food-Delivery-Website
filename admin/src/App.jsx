@@ -10,7 +10,8 @@ import Orders from './pages/Orders/Orders'
 
 
 const App = () => {
-  const url = "http://localhost:4000";
+  // const url = "http://localhost:4000";
+  const url = "https://tomato-fbackend.vercel.app";
   return (
     <div>
       <ToastContainer/>

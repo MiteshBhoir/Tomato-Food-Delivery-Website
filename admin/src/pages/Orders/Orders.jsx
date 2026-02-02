@@ -34,7 +34,7 @@ const Orders = ({ url }) => {
       <h3>Order Page</h3>
       <div className="order-list">
 
-        {orders.map((order, index) => {
+        {[...orders].reverse().map((order, index) => {
           return (
             <div key={index} className="order-item">
               <img src={assets.parcel_icon} alt="" />
