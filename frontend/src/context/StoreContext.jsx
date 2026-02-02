@@ -7,6 +7,8 @@ const StoreContextProvider = (props) => {
     const url = "https://tomato-fbackend.vercel.app";
     const [token, setToken] = useState("");
     const [food_list, setFoodList] = useState([]);
+    const [showLogin, setShowLogin] = useState(false)
+    
 
     const addToCart = async (itemId) => {
         if (!cartItems[itemId]) {
@@ -58,7 +60,7 @@ const StoreContextProvider = (props) => {
     }, [])
 
     const contextValue = {
-        food_list, cartItems, setCartItems, addToCart, removeFromCart, getTotalCartAmount, url, token, setToken
+        food_list, cartItems, setCartItems, addToCart, removeFromCart, getTotalCartAmount, url, token, setToken,showLogin,setShowLogin
     }
     return (
         <StoreContext.Provider value={contextValue}>

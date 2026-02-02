@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { ToastContainer } from "react-toastify";
 import Navbar from './components/Navbar/Navbar'
 import { Route, Routes } from 'react-router-dom'
 import PlaceOrder from './pages/PlaceOrder/PlaceOrder'
@@ -9,10 +10,13 @@ import AppDownload from './components/AppDownload/AppDownload'
 import LoginPopup from './components/LoginPopup/LoginPopup'
 import Verify from './pages/Verify/Verify'
 import MyOrders from './pages/MyOrders/MyOrders'
+import { StoreContext } from './context/StoreContext';
+import { useContext } from 'react';
 const App = () => {
-  const [showLogin, setShowLogin] = useState(false)
+  const {showLogin, setShowLogin} = useContext(StoreContext)
   return (
     <>
+      <ToastContainer />
       {showLogin ? <LoginPopup setShowLogin={setShowLogin} /> : <></>}
       <div className='App'>
         <Navbar setShowLogin={setShowLogin} />
